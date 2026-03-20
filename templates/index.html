@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Analyzer</title>
+</head>
+<body style="font-family: Arial; text-align:center; margin-top:50px;">
 
+    <h1>Smart Resume Analyzer</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="resume" required>
+        <br><br>
+        <button type="submit">Analyze Resume</button>
+    </form>
+
+    {% if score is not none %}
+        <h2>ATS Score: {{ score }}/100</h2>
+
+        <h3>Found Skills:</h3>
+        <p>{{ found }}</p>
+
+        <h3>Missing Skills:</h3>
+        <p>{{ missing }}</p>
+    {% endif %}
+
+</body>
+</html>
